@@ -29,13 +29,44 @@ namespace StickyNotes
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.flowLayoutPanelList = new System.Windows.Forms.FlowLayoutPanel();
+            this.SuspendLayout();
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(13, 13);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(309, 23);
+            this.buttonAdd.TabIndex = 0;
+            this.buttonAdd.Text = "Add new StickyNote";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // flowLayoutPanelList
+            // 
+            this.flowLayoutPanelList.Location = new System.Drawing.Point(13, 43);
+            this.flowLayoutPanelList.Name = "flowLayoutPanelList";
+            this.flowLayoutPanelList.Size = new System.Drawing.Size(309, 413);
+            this.flowLayoutPanelList.TabIndex = 1;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(814, 582);
+            this.Controls.Add(this.flowLayoutPanelList);
+            this.Controls.Add(this.buttonAdd);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelList;
     }
 }
 

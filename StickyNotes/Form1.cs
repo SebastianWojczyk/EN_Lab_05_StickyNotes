@@ -12,9 +12,34 @@ namespace StickyNotes
 {
     public partial class Form1 : Form
     {
+        private DBStickyNotesDataContext db = new DBStickyNotesDataContext();
         public Form1()
         {
             InitializeComponent();
+            showStickyNotes();
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            StickyNote myNewStickyNote = new StickyNote();
+            myNewStickyNote.NoteText = "";
+
+            db.StickyNotes.InsertOnSubmit(myNewStickyNote);
+
+            db.SubmitChanges();
+
+            showStickyNotes();
+        }
+
+        private void showStickyNotes()
+        {
+            flowLayoutPanelList.Controls.Clear();
+
+            foreach (StickyNote stickyNote in db.StickyNotes)
+            {
+                RichTextBox rtb = new RichTextBox();
+                flowLayoutPanelList.Controls.Add(rtb);
+            }
         }
     }
 }

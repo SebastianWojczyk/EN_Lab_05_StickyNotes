@@ -16,6 +16,14 @@ namespace StickyNotes
         public Form1()
         {
             InitializeComponent();
+
+            flowLayoutPanelList.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanelList.AutoSize = true;
+            flowLayoutPanelList.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+
+            this.AutoSize = true;
+            this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+
             showStickyNotes();
         }
 
@@ -38,6 +46,10 @@ namespace StickyNotes
             foreach (StickyNote stickyNote in db.StickyNotes)
             {
                 RichTextBox rtb = new RichTextBox();
+                rtb.BackColor = Color.Yellow;
+                rtb.Width = 300;
+                rtb.Height = 40;
+
                 rtb.Tag = stickyNote;
                 rtb.Text = stickyNote.NoteText;
 

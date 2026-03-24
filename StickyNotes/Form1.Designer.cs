@@ -58,7 +58,7 @@ namespace StickyNotes
             this.Controls.Add(this.flowLayoutPanelList);
             this.Controls.Add(this.buttonAdd);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Sticky Notes v0.1";
             this.ResumeLayout(false);
 
         }
